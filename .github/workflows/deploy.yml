@@ -23,7 +23,9 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          rm -rf package-lock.json node_modules
+          npm install
         # Use npm install if package-lock.json doesn't exist, but npm ci is better for CI.
         # I'll check if package-lock.json exists.
 
